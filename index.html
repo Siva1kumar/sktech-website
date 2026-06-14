@@ -1,181 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SK Tech Academy</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#07152f;
+  background:#f5f8ff;
+  color:#07152f;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 header{
-background:#fff;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-position:sticky;
-top:0;
-z-index:10;
+  background:white;
+  padding:14px 45px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-.logo h2{
-color:#0b2c5f;
-font-size:26px;
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-.logo span{
-color:#0d6efd;
+.logo-box img{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+}
+
+.logo-box h2{
+  font-size:28px;
+  color:#061b46;
+}
+
+.logo-box span{
+  color:#1266f1;
 }
 
 nav a{
-margin:0 12px;
-text-decoration:none;
-color:#07152f;
-font-weight:bold;
+  text-decoration:none;
+  color:#061b46;
+  margin:0 14px;
+  font-weight:800;
 }
 
-.phone{
-background:#0d6efd;
-color:white;
-padding:12px 18px;
-border-radius:8px;
-font-weight:bold;
+.phone-btn{
+  background:#1266f1;
+  color:white;
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:900;
 }
 
 .hero{
-background:linear-gradient(rgba(0,20,50,.85),rgba(0,20,50,.85)),
-url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');
-background-size:cover;
-background-position:center;
-color:white;
-padding:100px 20px;
-text-align:center;
+  min-height:620px;
+  background:
+  linear-gradient(90deg,rgba(3,18,48,.95),rgba(3,18,48,.82),rgba(3,18,48,.45)),
+  url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:80px 55px;
+}
+
+.hero-content{
+  max-width:760px;
 }
 
 .hero h1{
-font-size:58px;
-margin-bottom:15px;
+  font-size:64px;
+  margin-bottom:14px;
 }
 
 .hero h3{
-color:#3fa9ff;
-font-size:30px;
-margin-bottom:20px;
+  font-size:34px;
+  color:#3fa9ff;
+  margin-bottom:22px;
 }
 
 .hero p{
-max-width:850px;
-margin:auto;
-font-size:20px;
-line-height:1.6;
+  font-size:21px;
+  line-height:1.7;
+  margin-bottom:35px;
 }
 
-.btns{
-margin-top:40px;
+.buttons{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
 }
 
 .btn{
-padding:18px 30px;
-text-decoration:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-display:inline-block;
-margin:10px;
-color:white;
+  padding:20px 30px;
+  border-radius:12px;
+  color:white;
+  text-decoration:none;
+  font-size:19px;
+  font-weight:900;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-.register{
-background:#0d6efd;
+.blue{
+  background:#1266f1;
 }
 
-.interview{
-background:#28a745;
+.green{
+  background:#22a843;
+}
+
+.stats{
+  display:flex;
+  gap:22px;
+  margin-top:45px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  background:rgba(255,255,255,.13);
+  backdrop-filter:blur(10px);
+  padding:18px 25px;
+  border-radius:14px;
+  min-width:145px;
+  text-align:center;
+}
+
+.stat h2{
+  color:#3fa9ff;
 }
 
 .section{
-padding:60px 20px;
-text-align:center;
+  padding:65px 35px;
+  text-align:center;
+  background:white;
+}
+
+.section.light{
+  background:#eef5ff;
 }
 
 .section h2{
-font-size:34px;
-margin-bottom:10px;
+  font-size:34px;
+  text-transform:uppercase;
 }
 
 .line{
-width:50px;
-height:4px;
-background:#0d6efd;
-margin:15px auto 35px;
-border-radius:10px;
+  width:55px;
+  height:4px;
+  background:#1266f1;
+  border-radius:10px;
+  margin:15px auto 38px;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
 }
 
 .card{
-background:white;
-padding:28px;
-border-radius:12px;
-box-shadow:0 2px 12px rgba(0,0,0,.1);
-font-weight:bold;
+  background:white;
+  padding:32px 22px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border:1px solid #e7eef9;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 35px rgba(0,0,0,.14);
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:16px;
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:12px;
+  color:#061b46;
 }
 
 .card p{
-font-weight:normal;
-margin-top:10px;
-line-height:1.5;
-color:#334155;
+  color:#334155;
+  line-height:1.6;
+  font-size:15px;
+}
+
+.tech-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:18px;
 }
 
 .tech{
-background:#eef5ff;
+  background:white;
+  padding:25px 12px;
+  border-radius:16px;
+  font-weight:900;
+  color:#061b46;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.placement-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:20px;
+}
+
+.person{
+  background:white;
+  padding:28px 18px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.avatar{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#1266f1;
+  color:white;
+  margin:0 auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:900;
+}
+
+.person h3{
+  margin-bottom:8px;
+}
+
+.person p{
+  color:#334155;
+  line-height:1.6;
+}
+
+.cta{
+  background:linear-gradient(135deg,#061b46,#1266f1);
+  color:white;
+  padding:70px 25px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:38px;
+  margin-bottom:18px;
+}
+
+.cta p{
+  font-size:20px;
+  margin-bottom:32px;
 }
 
 footer{
-background:#041a3a;
-color:white;
-padding:45px 20px;
-text-align:center;
+  background:#031936;
+  color:white;
+  padding:55px 40px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1.5fr;
+  gap:35px;
+}
+
+footer h2, footer h3{
+  margin-bottom:18px;
+}
+
+footer p{
+  line-height:1.8;
 }
 
 footer a{
-color:white;
-text-decoration:none;
+  color:white;
+  text-decoration:none;
 }
 
-@media(max-width:768px){
-header{
-flex-direction:column;
-gap:12px;
+.copyright{
+  background:#020f22;
+  color:white;
+  text-align:center;
+  padding:16px;
 }
-nav{
-display:none;
+
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  background:#22a843;
+  color:white;
+  padding:15px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 8px 25px rgba(0,0,0,.3);
+  z-index:200;
 }
-.hero h1{
-font-size:40px;
-}
-.hero h3{
-font-size:24px;
-}
+
+@media(max-width:850px){
+  header{
+    flex-direction:column;
+    gap:14px;
+    padding:14px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero{
+    padding:60px 22px;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero h3{
+    font-size:25px;
+  }
+
+  .buttons, .stats{
+    justify-content:center;
+  }
+
+  footer{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -183,96 +367,140 @@ font-size:24px;
 <body>
 
 <header>
-<div class="logo">
-<img src="logo.jpeg" alt="SK Tech Logo" style="height:70px;">
-<h2>SK TECH <span>ACADEMY</span></h2>
-</div>
+  <div class="logo-box">
+    <img src="logo.jpeg" alt="SK Tech Academy Logo">
+    <h2>SK TECH <span>ACADEMY</span></h2>
+  </div>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#technologies">Technologies</a>
-<a href="#placements">Placed Candidates</a>
-<a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#technologies">Technologies</a>
+    <a href="#placements">Placed Candidates</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div class="phone">📞 9353447457</div>
+  <a class="phone-btn" href="tel:9353447457">📞 9353447457</a>
 </header>
 
 <section id="home" class="hero">
+  <div class="hero-content">
+    <h1>SK Tech Academy</h1>
+    <h3>Your Career Growth Partner</h3>
 
-<h1>SK Tech Academy</h1>
-<h3>Your Career Growth Partner</h3>
+    <p>
+      We help freshers and experienced candidates with training, resume support,
+      interview preparation, mock interviews, interview scheduling and placement
+      guidance until they get placed.
+    </p>
 
-<p>
-We help freshers and experienced candidates with training, resume support,
-interview preparation, mock interviews, and placement guidance until they get placed.
-</p>
+    <div class="buttons">
+      <a class="btn blue" target="_blank" href="https://forms.gle/h9aqB2KtMqqB9rmc6">
+        👤 Candidate Registration
+      </a>
 
-<div class="btns">
-<a class="btn register" href="https://forms.gle/AKGWz5JZmErRjB5a9" target="_blank">
-Candidate Registration
-</a>
+      <a class="btn green" target="_blank" href="https://forms.gle/fx3eemxa8DT6AfVM9">
+        📅 Interview Scheduling
+      </a>
+    </div>
 
-<a class="btn interview" href="https://forms.gle/fx3eemxa8DT6AfVM9" target="_blank">
-Interview Scheduling
-</a>
-</div>
-
+    <div class="stats">
+      <div class="stat"><h2>500+</h2><p>Students Trained</p></div>
+      <div class="stat"><h2>100+</h2><p>Placed Candidates</p></div>
+      <div class="stat"><h2>15+</h2><p>Technologies</p></div>
+      <div class="stat"><h2>100%</h2><p>Career Support</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="services" class="section">
-<h2>Our Services</h2>
-<div class="line"></div>
+  <h2>Our Services</h2>
+  <div class="line"></div>
 
-<div class="cards">
-<div class="card">📄 Resume Preparation<p>Professional resume building and review.</p></div>
-<div class="card">🎧 Mock Interviews<p>Real-time mock interviews with expert feedback.</p></div>
-<div class="card">🤝 Interview Support<p>End-to-end interview preparation support.</p></div>
-<div class="card">💼 Placement Assistance<p>Dedicated support until you get placed.</p></div>
-<div class="card">⭐ Career Guidance<p>Career growth and mentoring support.</p></div>
-<div class="card">🎓 Training & Mentorship<p>Industry-oriented practical training.</p></div>
-</div>
+  <div class="cards">
+    <div class="card"><div class="icon">📄</div><h3>Resume Preparation</h3><p>Professional resume building and review for better job opportunities.</p></div>
+    <div class="card"><div class="icon">🎧</div><h3>Mock Interviews</h3><p>Real-time mock interviews with expert feedback and improvement points.</p></div>
+    <div class="card"><div class="icon">🤝</div><h3>Interview Support</h3><p>End-to-end interview preparation support for freshers and experienced candidates.</p></div>
+    <div class="card"><div class="icon">💼</div><h3>Placement Assistance</h3><p>Dedicated placement support until candidates get placed.</p></div>
+    <div class="card"><div class="icon">⭐</div><h3>Career Guidance</h3><p>Personal guidance for career growth, profile building and skill improvement.</p></div>
+    <div class="card"><div class="icon">🎓</div><h3>Training & Mentorship</h3><p>Industry-oriented training and mentorship from real-time professionals.</p></div>
+  </div>
 </section>
 
-<section id="technologies" class="section tech">
-<h2>Technologies We Support</h2>
-<div class="line"></div>
+<section id="technologies" class="section light">
+  <h2>Technologies We Support</h2>
+  <div class="line"></div>
 
-<div class="cards">
-<div class="card">.NET</div>
-<div class="card">Java</div>
-<div class="card">QA / Testing</div>
-<div class="card">Data Analyst</div>
-<div class="card">Data Engineer</div>
-<div class="card">DevOps</div>
-<div class="card">SAP</div>
-<div class="card">GenAI Engineer</div>
-<div class="card">Business Analyst</div>
-</div>
+  <div class="tech-grid">
+    <div class="tech">.NET</div>
+    <div class="tech">Java</div>
+    <div class="tech">QA / Testing</div>
+    <div class="tech">Data Analyst</div>
+    <div class="tech">Data Engineer</div>
+    <div class="tech">DevOps</div>
+    <div class="tech">SAP</div>
+    <div class="tech">GenAI Engineer</div>
+    <div class="tech">Business Analyst</div>
+  </div>
 </section>
 
 <section id="placements" class="section">
-<h2>Recently Placed Candidates</h2>
-<div class="line"></div>
+  <h2>Recently Placed Candidates</h2>
+  <div class="line"></div>
 
-<div class="cards">
-<div class="card">Rahul Kumar<p>.NET Developer<br>Mphasis</p></div>
-<div class="card">Priya Sharma<p>QA Engineer<br>Capgemini</p></div>
-<div class="card">Sandeep Reddy<p>SAP Consultant<br>Tech Mahindra</p></div>
-<div class="card">Anjali Verma<p>Data Analyst<br>Hexaware</p></div>
-</div>
+  <div class="placement-grid">
+    <div class="person"><div class="avatar">RK</div><h3>Rahul Kumar</h3><p>.NET Developer<br>Mphasis</p></div>
+    <div class="person"><div class="avatar">PS</div><h3>Priya Sharma</h3><p>QA Engineer<br>Capgemini</p></div>
+    <div class="person"><div class="avatar">SR</div><h3>Sandeep Reddy</h3><p>SAP Consultant<br>Tech Mahindra</p></div>
+    <div class="person"><div class="avatar">AV</div><h3>Anjali Verma</h3><p>Data Analyst<br>Hexaware</p></div>
+    <div class="person"><div class="avatar">VS</div><h3>Vikash Singh</h3><p>Java Developer<br>TCS</p></div>
+    <div class="person"><div class="avatar">NP</div><h3>Neha Patel</h3><p>DevOps Engineer<br>Wipro</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Start Your Career Growth With SK Tech Academy</h2>
+  <p>Register today and get support for resume, mock interviews, interview scheduling and placement guidance.</p>
+
+  <div class="buttons" style="justify-content:center;">
+    <a class="btn blue" target="_blank" href="https://forms.gle/h9aqB2KtMqqB9rmc6">Candidate Registration</a>
+    <a class="btn green" target="_blank" href="https://forms.gle/fx3eemxa8DT6AfVM9">Interview Scheduling</a>
+  </div>
 </section>
 
 <footer id="contact">
-<h2>SK TECH ACADEMY</h2>
-<br>
-<p>📞 Call / WhatsApp: <a href="tel:9353447457">9353447457</a></p>
-<p>📧 <a href="mailto:support@mysktech.com">support@mysktech.com</a></p>
-<p>📍 Bangalore, Karnataka, India</p>
-<br>
-<p>© 2026 SK Tech Academy. All Rights Reserved.</p>
+  <div>
+    <h2>SK TECH ACADEMY</h2>
+    <p>
+      SK Tech Academy is committed to shaping careers and building better futures
+      for professionals across the IT industry.
+    </p>
+  </div>
+
+  <div>
+    <h3>Quick Links</h3>
+    <p><a href="#home">Home</a></p>
+    <p><a href="#services">Services</a></p>
+    <p><a href="#technologies">Technologies</a></p>
+    <p><a href="#placements">Placed Candidates</a></p>
+  </div>
+
+  <div>
+    <h3>Contact Us</h3>
+    <p>📞 Call / WhatsApp: <a href="tel:9353447457">9353447457</a></p>
+    <p>📧 <a href="mailto:support@mysktech.com">support@mysktech.com</a></p>
+    <p>📍 Bangalore, Karnataka, India</p>
+    <p>🕘 Monday - Saturday | 9:00 AM - 7:00 PM</p>
+  </div>
 </footer>
+
+<div class="copyright">
+  © 2026 SK Tech Academy. All Rights Reserved.
+</div>
+
+<a class="whatsapp" target="_blank" href="https://wa.me/919353447457">
+  WhatsApp
+</a>
 
 </body>
 </html>
