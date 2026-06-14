@@ -1,365 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SK Tech Academy</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  background:#f5f8ff;
-  color:#07152f;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f4f8ff;color:#07152f}
+html{scroll-behavior:smooth}
 
 header{
-  background:white;
-  padding:14px 45px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
-  position:sticky;
-  top:0;
-  z-index:100;
+  background:white;padding:14px 70px;display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 4px 22px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000
 }
-
-.logo-box{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.logo-box img{
-  width:72px;
-  height:72px;
-  object-fit:contain;
-}
-
-.logo-box h2{
-  font-size:28px;
-  color:#061b46;
-}
-
-.logo-box span{
-  color:#1266f1;
-}
-
-nav a{
-  text-decoration:none;
-  color:#061b46;
-  margin:0 14px;
-  font-weight:800;
-}
-
-.phone-btn{
-  background:#1266f1;
-  color:white;
-  padding:14px 22px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:900;
-}
+.logo{display:flex;align-items:center;gap:14px}
+.logo img{width:72px;height:72px;object-fit:contain}
+.logo h2{font-size:29px;color:#061b46;letter-spacing:1px}
+.logo span{color:#1266f1}
+nav a{margin:0 16px;text-decoration:none;color:#061b46;font-weight:800;font-size:15px}
+.call{background:#1266f1;color:white;text-decoration:none;padding:14px 22px;border-radius:10px;font-weight:900}
 
 .hero{
-  min-height:620px;
-  background:
-  linear-gradient(90deg,rgba(3,18,48,.95),rgba(3,18,48,.82),rgba(3,18,48,.45)),
-  url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80");
-  background-size:cover;
-  background-position:center;
-  color:white;
-  display:flex;
-  align-items:center;
-  padding:80px 55px;
+  min-height:680px;color:white;display:flex;align-items:center;padding:90px 80px;
+  background:linear-gradient(90deg,rgba(3,18,48,.96),rgba(3,18,48,.78),rgba(3,18,48,.35)),
+  url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=90");
+  background-size:cover;background-position:center
 }
-
-.hero-content{
-  max-width:760px;
-}
-
-.hero h1{
-  font-size:64px;
-  margin-bottom:14px;
-}
-
-.hero h3{
-  font-size:34px;
-  color:#3fa9ff;
-  margin-bottom:22px;
-}
-
-.hero p{
-  font-size:21px;
-  line-height:1.7;
-  margin-bottom:35px;
-}
-
-.buttons{
-  display:flex;
-  gap:22px;
-  flex-wrap:wrap;
-}
-
+.hero-box{max-width:760px}
+.hero h1{font-size:68px;line-height:1.1;margin-bottom:14px}
+.hero h3{font-size:35px;color:#45aaff;margin-bottom:24px}
+.hero p{font-size:21px;line-height:1.8;margin-bottom:34px;color:#eef6ff}
+.btns{display:flex;gap:22px;flex-wrap:wrap}
 .btn{
-  padding:20px 30px;
-  border-radius:12px;
-  color:white;
-  text-decoration:none;
-  font-size:19px;
-  font-weight:900;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  padding:20px 34px;border-radius:12px;color:white;text-decoration:none;font-size:19px;
+  font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.25)
 }
+.blue{background:#1266f1}.green{background:#22a843}
 
-.blue{
-  background:#1266f1;
-}
-
-.green{
-  background:#22a843;
-}
-
-.stats{
-  display:flex;
-  gap:22px;
-  margin-top:45px;
-  flex-wrap:wrap;
-}
-
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px;max-width:920px}
 .stat{
-  background:rgba(255,255,255,.13);
-  backdrop-filter:blur(10px);
-  padding:18px 25px;
-  border-radius:14px;
-  min-width:145px;
-  text-align:center;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);
+  padding:20px;border-radius:16px;text-align:center;backdrop-filter:blur(8px)
 }
+.stat h2{font-size:32px;color:#45aaff}.stat p{font-size:14px;margin:0;color:white}
 
-.stat h2{
-  color:#3fa9ff;
+.section{padding:75px 55px;text-align:center;background:white}
+.section.alt{background:#edf5ff}
+.section h2{font-size:36px;text-transform:uppercase;color:#061b46}
+.line{width:60px;height:4px;background:#1266f1;border-radius:10px;margin:16px auto 45px}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1180px;margin:auto}
+.service{
+  background:white;border-radius:22px;padding:34px 28px;text-align:left;
+  box-shadow:0 12px 34px rgba(6,27,70,.10);border:1px solid #e1ecfb;transition:.3s
 }
-
-.section{
-  padding:65px 35px;
-  text-align:center;
-  background:white;
-}
-
-.section.light{
-  background:#eef5ff;
-}
-
-.section h2{
-  font-size:34px;
-  text-transform:uppercase;
-}
-
-.line{
-  width:55px;
-  height:4px;
-  background:#1266f1;
-  border-radius:10px;
-  margin:15px auto 38px;
-}
-
-.cards{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:22px;
-}
-
-.card{
-  background:white;
-  padding:32px 22px;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  border:1px solid #e7eef9;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 16px 35px rgba(0,0,0,.14);
-}
-
+.service:hover{transform:translateY(-8px);box-shadow:0 18px 45px rgba(6,27,70,.18)}
 .icon{
-  font-size:42px;
-  margin-bottom:16px;
+  width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#1266f1,#45aaff);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:white;font-size:27px;font-weight:900
 }
+.service h3{font-size:22px;margin-bottom:12px;color:#061b46}
+.service p{font-size:16px;line-height:1.7;color:#475569}
 
-.card h3{
-  font-size:20px;
-  margin-bottom:12px;
-  color:#061b46;
-}
-
-.card p{
-  color:#334155;
-  line-height:1.6;
-  font-size:15px;
-}
-
-.tech-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:18px;
-}
-
+.tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1180px;margin:auto}
 .tech{
-  background:white;
-  padding:25px 12px;
-  border-radius:16px;
-  font-weight:900;
-  color:#061b46;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  background:white;border:1px solid #dfeafa;border-radius:16px;padding:24px 12px;font-weight:900;
+  box-shadow:0 8px 24px rgba(6,27,70,.08);color:#061b46
 }
 
-.placement-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-  gap:20px;
-}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1180px;margin:auto}
+.why{background:#061b46;color:white;border-radius:20px;padding:30px 22px}
+.why h3{font-size:20px;margin-bottom:12px;color:#45aaff}
+.why p{line-height:1.6;color:#e7f1ff}
 
+.placement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px;margin:auto}
 .person{
-  background:white;
-  padding:28px 18px;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  background:white;border-radius:20px;padding:28px;display:flex;align-items:center;gap:18px;text-align:left;
+  border:1px solid #e1ecfb;box-shadow:0 10px 28px rgba(6,27,70,.10)
 }
-
 .avatar{
-  width:65px;
-  height:65px;
-  border-radius:50%;
-  background:#1266f1;
-  color:white;
-  margin:0 auto 15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:900;
+  min-width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#1266f1,#45aaff);
+  color:white;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px
 }
-
-.person h3{
-  margin-bottom:8px;
-}
-
-.person p{
-  color:#334155;
-  line-height:1.6;
-}
+.person h3{font-size:20px;color:#061b46}.person p{line-height:1.6;color:#475569}
 
 .cta{
-  background:linear-gradient(135deg,#061b46,#1266f1);
-  color:white;
-  padding:70px 25px;
-  text-align:center;
+  background:linear-gradient(135deg,#061b46,#1266f1);color:white;text-align:center;padding:75px 25px
 }
-
-.cta h2{
-  font-size:38px;
-  margin-bottom:18px;
-}
-
-.cta p{
-  font-size:20px;
-  margin-bottom:32px;
-}
+.cta h2{font-size:40px;margin-bottom:15px}.cta p{font-size:20px;margin-bottom:30px}
 
 footer{
-  background:#031936;
-  color:white;
-  padding:55px 40px;
-  display:grid;
-  grid-template-columns:2fr 1fr 1.5fr;
-  gap:35px;
+  background:#031936;color:white;padding:55px 70px;display:grid;grid-template-columns:2fr 1fr 1.6fr;gap:35px
 }
-
-footer h2, footer h3{
-  margin-bottom:18px;
-}
-
-footer p{
-  line-height:1.8;
-}
-
-footer a{
-  color:white;
-  text-decoration:none;
-}
-
-.copyright{
-  background:#020f22;
-  color:white;
-  text-align:center;
-  padding:16px;
-}
-
+footer h2,footer h3{margin-bottom:16px}footer p{line-height:1.8;color:#dbeafe}
+footer a{color:white;text-decoration:none}
+.copy{background:#020f22;color:white;text-align:center;padding:16px}
 .whatsapp{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  background:#22a843;
-  color:white;
-  padding:15px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:900;
-  box-shadow:0 8px 25px rgba(0,0,0,.3);
-  z-index:200;
+  position:fixed;right:22px;bottom:22px;background:#22a843;color:white;text-decoration:none;
+  padding:16px 22px;border-radius:50px;font-weight:900;box-shadow:0 8px 28px rgba(0,0,0,.35)
 }
 
-@media(max-width:850px){
-  header{
-    flex-direction:column;
-    gap:14px;
-    padding:14px;
-  }
-
-  nav{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .hero{
-    padding:60px 22px;
-    text-align:center;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .hero h3{
-    font-size:25px;
-  }
-
-  .buttons, .stats{
-    justify-content:center;
-  }
-
-  footer{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+@media(max-width:900px){
+  header{padding:14px;flex-direction:column;gap:12px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center}
+  .hero{padding:65px 24px;text-align:center}
+  .hero h1{font-size:42px}.hero h3{font-size:25px}
+  .stats,.service-grid,.tech-grid,.why-grid,.placement-grid,footer{grid-template-columns:1fr}
+  .btns{justify-content:center}
 }
 </style>
 </head>
@@ -367,48 +115,37 @@ footer a{
 <body>
 
 <header>
-  <div class="logo-box">
+  <div class="logo">
     <img src="logo.jpeg" alt="SK Tech Academy Logo">
     <h2>SK TECH <span>ACADEMY</span></h2>
   </div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#technologies">Technologies</a>
-    <a href="#placements">Placed Candidates</a>
+    <a href="#tech">Technologies</a>
+    <a href="#why">Why Us</a>
+    <a href="#placed">Placed Candidates</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <a class="phone-btn" href="tel:9353447457">📞 9353447457</a>
+  <a class="call" href="tel:9353447457">9353447457</a>
 </header>
 
 <section id="home" class="hero">
-  <div class="hero-content">
+  <div class="hero-box">
     <h1>SK Tech Academy</h1>
     <h3>Your Career Growth Partner</h3>
+    <p>We support freshers and experienced candidates with resume preparation, interview readiness, mock interviews, scheduling support, career guidance and placement assistance.</p>
 
-    <p>
-      We help freshers and experienced candidates with training, resume support,
-      interview preparation, mock interviews, interview scheduling and placement
-      guidance until they get placed.
-    </p>
-
-    <div class="buttons">
-      <a class="btn blue" target="_blank" href="https://forms.gle/h9aqB2KtMqqB9rmc6">
-        👤 Candidate Registration
-      </a>
-
-      <a class="btn green" target="_blank" href="https://forms.gle/fx3eemxa8DT6AfVM9">
-        📅 Interview Scheduling
-      </a>
+    <div class="btns">
+      <a class="btn blue" target="_blank" href="https://forms.gle/h9aqB2KtMqqB9rmc6">Candidate Registration</a>
+      <a class="btn green" target="_blank" href="https://forms.gle/fx3eemxa8DT6AfVM9">Interview Scheduling</a>
     </div>
 
     <div class="stats">
-      <div class="stat"><h2>500+</h2><p>Students Trained</p></div>
-      <div class="stat"><h2>100+</h2><p>Placed Candidates</p></div>
+      <div class="stat"><h2>500+</h2><p>Candidates Guided</p></div>
+      <div class="stat"><h2>100+</h2><p>Placement Support</p></div>
       <div class="stat"><h2>15+</h2><p>Technologies</p></div>
-      <div class="stat"><h2>100%</h2><p>Career Support</p></div>
+      <div class="stat"><h2>100%</h2><p>Career Guidance</p></div>
     </div>
   </div>
 </section>
@@ -417,52 +154,53 @@ footer a{
   <h2>Our Services</h2>
   <div class="line"></div>
 
-  <div class="cards">
-    <div class="card"><div class="icon">📄</div><h3>Resume Preparation</h3><p>Professional resume building and review for better job opportunities.</p></div>
-    <div class="card"><div class="icon">🎧</div><h3>Mock Interviews</h3><p>Real-time mock interviews with expert feedback and improvement points.</p></div>
-    <div class="card"><div class="icon">🤝</div><h3>Interview Support</h3><p>End-to-end interview preparation support for freshers and experienced candidates.</p></div>
-    <div class="card"><div class="icon">💼</div><h3>Placement Assistance</h3><p>Dedicated placement support until candidates get placed.</p></div>
-    <div class="card"><div class="icon">⭐</div><h3>Career Guidance</h3><p>Personal guidance for career growth, profile building and skill improvement.</p></div>
-    <div class="card"><div class="icon">🎓</div><h3>Training & Mentorship</h3><p>Industry-oriented training and mentorship from real-time professionals.</p></div>
+  <div class="service-grid">
+    <div class="service"><div class="icon">01</div><h3>Profile & Resume Building</h3><p>We create professional resumes and candidate profiles that highlight skills, project experience and job readiness.</p></div>
+    <div class="service"><div class="icon">02</div><h3>Mock Interview Practice</h3><p>Domain-based mock interviews with practical feedback to improve confidence, answers and communication.</p></div>
+    <div class="service"><div class="icon">03</div><h3>Interview Scheduling</h3><p>Candidates can schedule interview preparation slots using our dedicated interview scheduling form.</p></div>
+    <div class="service"><div class="icon">04</div><h3>Placement Assistance</h3><p>We guide candidates with job applications, interview preparation and placement process support.</p></div>
+    <div class="service"><div class="icon">05</div><h3>Career Mentorship</h3><p>One-to-one guidance for choosing the right domain, preparing job strategy and improving technical skills.</p></div>
+    <div class="service"><div class="icon">06</div><h3>Technology Training</h3><p>Practical training support for real-time technologies handled by experienced professionals.</p></div>
   </div>
 </section>
 
-<section id="technologies" class="section light">
+<section id="tech" class="section alt">
   <h2>Technologies We Support</h2>
   <div class="line"></div>
-
   <div class="tech-grid">
-    <div class="tech">.NET</div>
-    <div class="tech">Java</div>
-    <div class="tech">QA / Testing</div>
-    <div class="tech">Data Analyst</div>
-    <div class="tech">Data Engineer</div>
-    <div class="tech">DevOps</div>
-    <div class="tech">SAP</div>
-    <div class="tech">GenAI Engineer</div>
-    <div class="tech">Business Analyst</div>
+    <div class="tech">.NET</div><div class="tech">Java</div><div class="tech">QA Testing</div><div class="tech">Data Analyst</div><div class="tech">Data Engineer</div>
+    <div class="tech">DevOps</div><div class="tech">SAP</div><div class="tech">GenAI Engineer</div><div class="tech">Business Analyst</div><div class="tech">Full Stack</div>
   </div>
 </section>
 
-<section id="placements" class="section">
+<section id="why" class="section">
+  <h2>Why Choose SK Tech</h2>
+  <div class="line"></div>
+  <div class="why-grid">
+    <div class="why"><h3>Real-Time Guidance</h3><p>Practical support based on current interview expectations and industry needs.</p></div>
+    <div class="why"><h3>End-to-End Support</h3><p>From profile preparation to interview scheduling and placement guidance.</p></div>
+    <div class="why"><h3>Multiple Domains</h3><p>Support for development, testing, data, cloud, SAP, GenAI and business roles.</p></div>
+    <div class="why"><h3>Candidate Focused</h3><p>Simple process, direct support and clear communication for every candidate.</p></div>
+  </div>
+</section>
+
+<section id="placed" class="section alt">
   <h2>Recently Placed Candidates</h2>
   <div class="line"></div>
-
   <div class="placement-grid">
-    <div class="person"><div class="avatar">RK</div><h3>Rahul Kumar</h3><p>.NET Developer<br>Mphasis</p></div>
-    <div class="person"><div class="avatar">PS</div><h3>Priya Sharma</h3><p>QA Engineer<br>Capgemini</p></div>
-    <div class="person"><div class="avatar">SR</div><h3>Sandeep Reddy</h3><p>SAP Consultant<br>Tech Mahindra</p></div>
-    <div class="person"><div class="avatar">AV</div><h3>Anjali Verma</h3><p>Data Analyst<br>Hexaware</p></div>
-    <div class="person"><div class="avatar">VS</div><h3>Vikash Singh</h3><p>Java Developer<br>TCS</p></div>
-    <div class="person"><div class="avatar">NP</div><h3>Neha Patel</h3><p>DevOps Engineer<br>Wipro</p></div>
+    <div class="person"><div class="avatar">RK</div><div><h3>Rahul Kumar</h3><p>.NET Developer<br>Mphasis</p></div></div>
+    <div class="person"><div class="avatar">PS</div><div><h3>Priya Sharma</h3><p>QA Engineer<br>Capgemini</p></div></div>
+    <div class="person"><div class="avatar">SR</div><div><h3>Sandeep Reddy</h3><p>SAP Consultant<br>Tech Mahindra</p></div></div>
+    <div class="person"><div class="avatar">AV</div><div><h3>Anjali Verma</h3><p>Data Analyst<br>Hexaware</p></div></div>
+    <div class="person"><div class="avatar">VS</div><div><h3>Vikash Singh</h3><p>Java Developer<br>TCS</p></div></div>
+    <div class="person"><div class="avatar">NP</div><div><h3>Neha Patel</h3><p>DevOps Engineer<br>Wipro</p></div></div>
   </div>
 </section>
 
 <section class="cta">
   <h2>Start Your Career Growth With SK Tech Academy</h2>
   <p>Register today and get support for resume, mock interviews, interview scheduling and placement guidance.</p>
-
-  <div class="buttons" style="justify-content:center;">
+  <div class="btns" style="justify-content:center">
     <a class="btn blue" target="_blank" href="https://forms.gle/h9aqB2KtMqqB9rmc6">Candidate Registration</a>
     <a class="btn green" target="_blank" href="https://forms.gle/fx3eemxa8DT6AfVM9">Interview Scheduling</a>
   </div>
@@ -471,36 +209,26 @@ footer a{
 <footer id="contact">
   <div>
     <h2>SK TECH ACADEMY</h2>
-    <p>
-      SK Tech Academy is committed to shaping careers and building better futures
-      for professionals across the IT industry.
-    </p>
+    <p>SK Tech Academy is committed to shaping careers and building better futures for professionals across the IT industry.</p>
   </div>
-
   <div>
     <h3>Quick Links</h3>
-    <p><a href="#home">Home</a></p>
     <p><a href="#services">Services</a></p>
-    <p><a href="#technologies">Technologies</a></p>
-    <p><a href="#placements">Placed Candidates</a></p>
+    <p><a href="#tech">Technologies</a></p>
+    <p><a href="#why">Why Us</a></p>
+    <p><a href="#placed">Placed Candidates</a></p>
   </div>
-
   <div>
     <h3>Contact Us</h3>
-    <p>📞 Call / WhatsApp: <a href="tel:9353447457">9353447457</a></p>
-    <p>📧 <a href="mailto:support@mysktech.com">support@mysktech.com</a></p>
-    <p>📍 Bangalore, Karnataka, India</p>
-    <p>🕘 Monday - Saturday | 9:00 AM - 7:00 PM</p>
+    <p>Call / WhatsApp: <a href="tel:9353447457">9353447457</a></p>
+    <p>Email: <a href="mailto:support@mysktech.com">support@mysktech.com</a></p>
+    <p>Bangalore, Karnataka, India</p>
+    <p>Monday - Saturday | 9:00 AM - 7:00 PM</p>
   </div>
 </footer>
 
-<div class="copyright">
-  © 2026 SK Tech Academy. All Rights Reserved.
-</div>
-
-<a class="whatsapp" target="_blank" href="https://wa.me/919353447457">
-  WhatsApp
-</a>
+<div class="copy">© 2026 SK Tech Academy. All Rights Reserved.</div>
+<a class="whatsapp" target="_blank" href="https://wa.me/919353447457">WhatsApp</a>
 
 </body>
 </html>
