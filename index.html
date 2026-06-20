@@ -6,7 +6,7 @@
 <title>SK Tech Academy | Learn • Practice • Grow • Get Placed</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 html{scroll-behavior:smooth}
 body{background:#f6f9ff;color:#07162f}
 :root{--navy:#061a3b;--blue:#0866ff;--orange:#ff8500;--green:#18b34b;--text:#334155}
@@ -52,12 +52,45 @@ nav a:hover{
 }
 .callbtn{background:linear-gradient(135deg,#0866ff,#00a3ff);color:white;text-decoration:none;padding:16px 25px;border-radius:12px;font-weight:900;font-size:18px;box-shadow:0 12px 25px rgba(8,102,255,.25)}
 
-.hero{min-height:620px;background:linear-gradient(90deg,rgba(6,26,59,.96),rgba(6,26,59,.80),rgba(6,26,59,.35)),url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=90");background-size:cover;background-position:center;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:70px 70px;color:white}
-.hero h1{font-size:64px;line-height:1.08;margin-bottom:20px}
+.hero{
+  min-height:700px;
+  background:linear-gradient(135deg,rgba(6,26,59,.90),rgba(6,26,59,.45)),url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=90");
+  background-size:cover;
+  background-position:center;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  padding:80px 70px;
+  color:white;
+  border-bottom-left-radius:40px;
+  border-bottom-right-radius:40px;
+  overflow:hidden;
+}
+.hero h1{
+  font-size:72px;
+  line-height:1.1;
+  margin-bottom:24px;
+  font-weight:800;
+}
 .hero h1 span{color:var(--orange)}
-.hero p{font-size:22px;line-height:1.6;margin-bottom:30px}
+.hero p{
+  font-size:24px;
+  line-height:1.6;
+  margin-bottom:36px;
+  font-weight:600;
+}
 .actions{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px}
-.btn{display:inline-block;text-decoration:none;color:white;padding:20px 30px;border-radius:12px;font-weight:900;font-size:18px;box-shadow:0 15px 35px rgba(0,0,0,.28);transition:.25s}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  padding:20px 32px;
+  border-radius:16px;
+  font-weight:900;
+  font-size:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.28);
+  transition:.25s;
+}
 .btn:hover{transform:translateY(-4px)}
 .blue{background:linear-gradient(135deg,#0866ff,#008fff)}
 .orange{background:linear-gradient(135deg,#ff8500,#ffb000)}

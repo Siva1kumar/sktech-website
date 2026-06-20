@@ -92,6 +92,7 @@ body {
 
 .search-section {
     margin-top: 30px;
+    display: none; /* Hide search bar per new requirement */
 }
 
 input {
@@ -141,4 +142,40 @@ td {
 
 tr:hover {
     background: rgba(255, 255, 255, 0.08);
+}
+
+/* Custom row colours for different interview statuses */
+tr.today-row {
+    /* Green tint for today's interviews */
+    background: rgba(36, 177, 101, 0.6);
+}
+tr.future-row {
+    /* Purple/blue tint for upcoming interviews */
+    background: rgba(125, 85, 216, 0.55);
+}
+tr.conflict-row {
+    /* Red tint for time conflicts */
+    background: rgba(215, 70, 70, 0.7);
+}
+
+/* Prevent time strings from wrapping to the next line */
+th, td {
+    white-space: nowrap;
+}
+
+/* Home button styling */
+.home-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0866ff, #00a3ff);
+    color: #ffffff;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
